@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us — Fuel Motion Inc. | Advanced Battery Intelligence</title>
+    <meta
+      name="description"
+      content="Fuel Motion Inc. (FMI) builds intelligent lithium battery systems, energy management solutions, and a cloud-based Storage Intelligence Platform that make energy storage smarter, safer, and more connected."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+    <style>
+      /* ── Prose measure ── */
+      .about-prose p,
+      .about-prose ul {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--text);
+        margin-bottom: 1.25rem;
+      }
+      .about-prose h3 {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Sora", sans-serif;
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+        font-weight: 700;
+        color: var(--text);
+        margin-top: 1.75rem;
+        margin-bottom: 0.5rem;
+      }
+      .about-prose ul {
+        padding-left: 1.25rem;
+      }
+      .about-prose ul li {
+        margin-bottom: 0.4rem;
+      }
+      .about-prose .section-head {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ── Hero with background image ── */
+      .hero--about {
+        position: relative;
+        background-image: url("assets/about us/top background.jpeg");
+        background-size: cover;
+        background-position: center 30%;
+        min-height: 540px;
+      }
+      .hero--about::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          100deg,
+          rgba(10, 22, 40, 0.82) 0%,
+          rgba(10, 22, 40, 0.55) 55%,
+          rgba(10, 22, 40, 0.25) 100%
+        );
+        z-index: 0;
+      }
+      .hero--about .hero-inner {
+        position: relative;
+        z-index: 1;
+      }
+      .hero--about h1,
+      .hero--about .hero-desc,
+      .hero--about .hero-tag {
+        color: #fff;
+      }
+      .hero--about h1 em {
+        color: var(--green);
+        font-style: normal;
+      }
+      .hero--about .hero-tag {
+        background: rgba(255,255,255,0.1);
+        border-color: rgba(255,255,255,0.2);
+        color: var(--green);
+      }
+      .hero--about .hero-tag span {
+        background: var(--green);
+      }
+
+      /* ── Split layout (text + image) ── */
+      .about-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+        padding: var(--section-py) var(--section-px);
+      }
+      .about-split.reverse {
+        direction: rtl;
+      }
+      .about-split.reverse > * {
+        direction: ltr;
+      }
+      .about-split__img {
+        border-radius: var(--radius-img);
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        line-height: 0;
+      }
+      .about-split__img img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--radius-img);
+      }
+      .about-split__text .section-head {
+        margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      }
+      .about-split__text p,
+      .about-split__text ul {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--text);
+        margin-bottom: 1.1rem;
+      }
+      .about-split__text ul {
+        padding-left: 1.25rem;
+      }
+      .about-split__text ul li {
+        margin-bottom: 0.4rem;
+      }
+      .about-split__text h3 {
+        font-family: "Sora", sans-serif;
+        font-size: clamp(1.05rem, 2vw, 1.2rem);
+        font-weight: 700;
+        color: var(--text);
+        margin-top: 1.5rem;
+        margin-bottom: 0.4rem;
+      }
+
+      /* ── Full-width banner image (Building Tomorrow) ── */
+      .about-banner {
+        padding: var(--section-py) var(--section-px);
+      }
+      .about-banner__img {
+        border-radius: var(--radius-img);
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        margin-bottom: clamp(2rem, 4vw, 3rem);
+      }
+      .about-banner__img img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--radius-img);
+      }
+      .about-banner__text {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .about-banner__text p,
+      .about-banner__text ul {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--text);
+        margin-bottom: 1.1rem;
+      }
+
+      /* ── Alternating section background ── */
+      .section--tinted {
+        background: var(--off);
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 860px) {
+        .about-split {
+          grid-template-columns: 1fr;
+        }
+        .about-split.reverse {
+          direction: ltr;
+        }
+        .about-split__img {
+          order: -1;
+        }
+      }
+      @media (max-width: 480px) {
+        .hero--about {
+          min-height: 420px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ─── NAVBAR ─── -->
+    <header class="navbar" role="banner">
+      <a href="index.html" class="nav-logo" aria-label="Fuel Motion Inc. Home">
+        <img src="assets/fmi logo.jpeg" alt="Fuel Motion Inc." />
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" role="list">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#platform">Platform</a></li>
+          <li><a href="index.html#industries">Industries</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-ctas">
+        <a href="index.html#contact" class="btn btn-outline">Client Portal</a>
+        <a href="index.html#contact" class="btn btn-primary">Request Demo</a>
+      </div>
+      <button
+        class="nav-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <div class="nav-drawer" id="mobile-drawer" aria-hidden="true">
+      <ul role="list">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#platform">Platform</a></li>
+        <li><a href="index.html#industries">Industries</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-drawer-ctas">
+        <a href="index.html#contact" class="btn btn-outline">Client Portal</a>
+        <a href="index.html#contact" class="btn btn-primary">Request Demo</a>
+      </div>
+    </div>
+
+    <main>
+
+      <!-- ─── HERO — top_background.jpeg ─── -->
+      <section class="hero hero--about" id="home" aria-labelledby="hero-heading">
+        <div class="hero-inner">
+          <div class="hero-left fade-up">
+            <div class="hero-tag">
+              <span aria-hidden="true"></span> About Fuel Motion Inc.
+            </div>
+            <h1 id="hero-heading">
+              Advanced Battery Intelligence for <em>Scalable</em> Energy Systems
+            </h1>
+            <p class="hero-desc">
+              Connecting batteries, data, and intelligence to create smarter,
+              safer, and more sustainable energy solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── ABOUT FUEL MOTION INC. ─── -->
+      <section class="about-prose" aria-labelledby="about-heading">
+        <div class="section-head fade-up">
+          <h2 id="about-heading" class="section-title">About Fuel Motion Inc.</h2>
+          <p class="section-sub">Powering the Future Through Battery Intelligence</p>
+        </div>
+        <div class="fade-up">
+          <p>
+            At Fuel Motion Inc. (FMI), we believe the future of energy is not
+            just about storing power—it's about understanding it.
+          </p>
+          <p>
+            We are a technology-driven energy company focused on developing
+            advanced battery intelligence solutions that help businesses,
+            industries, and communities manage energy more efficiently,
+            reliably, and sustainably. By combining smart battery systems,
+            cloud-based analytics, IoT connectivity, and intelligent energy
+            management, we transform traditional energy storage into
+            actionable, data-driven ecosystems.
+          </p>
+          <p>Our mission is simple:</p>
+          <p><strong>To make energy storage smarter, safer, and more connected.</strong></p>
+        </div>
+      </section>
+
+      <!-- ─── WHAT WE DO — what_we_do.jpeg (image right) ─── -->
+      <section class="about-split section--tinted" id="products" aria-labelledby="what-we-do-heading">
+        <div class="about-split__text fade-up">
+          <div class="section-head">
+            <h2 id="what-we-do-heading" class="section-title">What We Do</h2>
+          </div>
+          <p>
+            Fuel Motion Inc. develops intelligent lithium battery solutions
+            and energy management platforms designed to optimize performance,
+            extend battery life, and provide real-time visibility into energy
+            systems.
+          </p>
+          <p>Our ecosystem includes:</p>
+
+          <h3>Smart Lithium Batteries</h3>
+          <p>
+            Advanced battery systems equipped with intelligent Battery
+            Management Systems (BMS), real-time monitoring, remote
+            diagnostics, and predictive maintenance capabilities.
+          </p>
+
+          <h3>Energy Managed Storage (EMS)</h3>
+          <p>
+            Scalable energy storage solutions designed for residential,
+            commercial, and industrial applications, providing backup power,
+            energy optimization, and grid resilience.
+          </p>
+
+          <h3>Storage Intelligence Platform</h3>
+          <p>
+            Our cloud-based analytics platform delivers continuous
+            monitoring, performance insights, lifecycle management, and
+            predictive analytics that enable customers to maximize the value
+            of their energy assets.
+          </p>
+
+          <h3>Mobile &amp; Remote Monitoring</h3>
+          <p>
+            Through our connected applications, customers can monitor battery
+            health, performance metrics, charging behavior, and system status
+            from anywhere in the world.
+          </p>
+        </div>
+        <div class="about-split__img fade-up">
+          <img
+            src="assets/About us/what we do.jpeg"
+            alt="FMI battery monitoring dashboard on a mobile device inside a data center"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <!-- ─── MORE THAN A BATTERY COMPANY ─── -->
+      <section class="about-prose" aria-labelledby="more-than-heading">
+        <div class="section-head fade-up">
+          <h2 id="more-than-heading" class="section-title">More Than a Battery Company</h2>
+        </div>
+        <div class="fade-up">
+          <p>
+            While many companies manufacture batteries, Fuel Motion Inc.
+            focuses on creating intelligent energy ecosystems.
+          </p>
+          <p>Our technology enables customers to:</p>
+          <ul>
+            <li>Monitor battery health in real time</li>
+            <li>Improve operational efficiency</li>
+            <li>Reduce maintenance costs</li>
+            <li>Extend battery lifespan</li>
+            <li>Increase energy reliability</li>
+            <li>Access actionable performance insights</li>
+            <li>Support sustainability and carbon reduction goals</li>
+          </ul>
+          <p>
+            We believe that data is the missing link between energy storage
+            and energy optimization.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─── INNOVATION AT OUR CORE — innovation_at_our_core.jpeg (image left) ─── -->
+      <section class="about-split section--tinted" id="platform" aria-labelledby="innovation-heading">
+        <div class="about-split__img fade-up">
+          <img
+            src="assets/about us/innovation at our core.jpeg"
+            alt="Global cloud-connected battery storage network illustrating FMI's IoT platform"
+            loading="lazy"
+          />
+        </div>
+        <div class="about-split__text fade-up">
+          <div class="section-head">
+            <h2 id="innovation-heading" class="section-title">Innovation at Our Core</h2>
+          </div>
+          <p>Innovation drives everything we do.</p>
+          <p>
+            Our team continuously develops advanced battery intelligence
+            technologies that combine:
+          </p>
+          <ul>
+            <li>Internet of Things (IoT) Connectivity</li>
+            <li>Cloud Computing</li>
+            <li>Predictive Analytics</li>
+            <li>Smart Battery Management Systems</li>
+            <li>Energy Optimization Algorithms</li>
+            <li>Remote Diagnostics &amp; Monitoring</li>
+          </ul>
+          <p>
+            These technologies empower organizations to make informed
+            decisions, reduce downtime, and maximize energy performance
+            across their operations.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─── OUR VISION — Our_vision.jpeg (image right) ─── -->
+      <section class="about-split" aria-labelledby="vision-heading">
+        <div class="about-split__text fade-up">
+          <div class="section-head">
+            <h2 id="vision-heading" class="section-title">Our Vision</h2>
+          </div>
+          <p>
+            To become a global leader in intelligent energy storage and
+            battery analytics, helping accelerate the transition toward a
+            cleaner, more sustainable, and digitally connected energy future.
+          </p>
+        </div>
+        <div class="about-split__img fade-up">
+          <img
+            src="assets/about us/Our vision.jpeg"
+            alt="Renewable energy landscape with solar panels, wind turbines and FMI battery storage systems"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <!-- ─── OUR COMMITMENT ─── -->
+      <section class="about-prose section--tinted" id="services" aria-labelledby="commitment-heading">
+        <div class="section-head fade-up">
+          <h2 id="commitment-heading" class="section-title">Our Commitment</h2>
+        </div>
+        <div class="fade-up">
+          <p>At Fuel Motion Inc., we are committed to delivering:</p>
+
+          <h3>Reliability</h3>
+          <p>
+            Energy solutions designed for long-term performance and
+            operational confidence.
+          </p>
+
+          <h3>Intelligence</h3>
+          <p>
+            Actionable insights that transform battery data into meaningful
+            decisions.
+          </p>
+
+          <h3>Sustainability</h3>
+          <p>
+            Technologies that support cleaner energy adoption and responsible
+            resource utilization.
+          </p>
+
+          <h3>Partnership</h3>
+          <p>
+            Working closely with customers, integrators, and industry
+            partners to solve real-world energy challenges.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─── BUILDING THE ENERGY SYSTEMS OF TOMORROW — Energy_systems_for_tomorrow.jpeg (banner) ─── -->
+      <section class="about-banner" aria-labelledby="tomorrow-heading">
+        <div class="about-banner__img fade-up">
+          <img
+            src="assets/about us/Energy systems for tomorrow.jpeg"
+            alt="Fuel Motion Inc. large-scale battery energy storage deployment with a city skyline at dusk"
+            loading="lazy"
+          />
+        </div>
+        <div class="about-banner__text fade-up">
+          <div class="section-head">
+            <h2 id="tomorrow-heading" class="section-title">
+              Building the Energy Systems of Tomorrow
+            </h2>
+          </div>
+          <p>
+            The world is rapidly moving toward electrification, renewable
+            energy, and distributed power systems. Fuel Motion Inc. is
+            helping lead that transition by providing the intelligence layer
+            that modern energy storage demands.
+          </p>
+          <p>We are not simply storing energy.</p>
+          <p><strong>We are unlocking its full potential.</strong></p>
+        </div>
+      </section>
+
+      <!-- ─── CTA ─── -->
+      <div class="mid-cta" id="contact" role="region" aria-label="Call to action">
+        <h2>Ready to Power Your Next Project?</h2>
+        <p>
+          Our engineering team is ready to scope your requirements and
+          deliver a proposal within 48 hours.
+        </p>
+        <div class="mid-cta-btns">
+          <a href="index.html#contact" class="btn btn-green btn-lg"
+            >Request Technical Consultation</a
+          >
+          <a href="index.html#platform" class="btn btn-outline-white btn-lg"
+            >Explore Platform</a
+          >
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer role="contentinfo">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon" aria-hidden="true"></div>
+            Fuel Motion Inc.
+          </div>
+          <p>
+            Intelligent battery solutions for the enterprises that power
+            civilization. Engineered for precision, built for scale.
+          </p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Products</h5>
+            <ul>
+              <li><a href="index.html#products">12V Smart Battery</a></li>
+              <li><a href="index.html#products">EMS Systems</a></li>
+              <li><a href="index.html#products">Storage Intelligence Platform</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Partners</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Resources</h5>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Case Studies</a></li>
+              <li><a href="blog/index.html">Blog</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Fuel Motion Inc. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
