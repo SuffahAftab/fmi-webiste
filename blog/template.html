@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         PLACEHOLDER: Replace META_DESCRIPTION with a 150–160 character
+         summary of this article for search engines and social sharing.
+         ═══════════════════════════════════════════════════════════════════ -->
+    <meta name="description" content="META_DESCRIPTION" />
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="article" />
+    <!-- ═══════════════════════════════════════════════════════════════════
+         PLACEHOLDER: Replace BLOG_TITLE in the two og:title / title tags
+         below, and set og:image to the same URL you use for HERO_IMAGE.
+         ═══════════════════════════════════════════════════════════════════ -->
+    <meta property="og:title" content="BLOG_TITLE — Fuel Motion Inc." />
+    <meta property="og:description" content="META_DESCRIPTION" />
+    <meta property="og:image" content="HERO_IMAGE" />
+
+    <title>BLOG_TITLE — Fuel Motion Inc.</title>
+
+    <!-- Fonts (same as rest of site) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Site-wide styles (one level up from /blog) -->
+    <link rel="stylesheet" href="../css/blog.css" />
+    <!-- Post-specific typography and layout -->
+    <link rel="stylesheet" href="../css/blog-post.css" />
+  </head>
+  <body>
+
+    <!-- ─── NAVBAR ─── -->
+    <header class="navbar" role="banner">
+      <a href="../index.html" class="nav-logo" aria-label="Fuel Motion Inc. Home">
+        <img src="../assets/fmi logo.jpeg" alt="Fuel Motion Inc." />
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" role="list">
+          <li><a href="../index.html#products">Products</a></li>
+          <li><a href="../index.html#platform">Platform</a></li>
+          <li><a href="../index.html#industries">Industries</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="index.html" class="active">Blog</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-ctas">
+        <a href="../index.html#contact" class="btn btn-outline">Client Portal</a>
+        <a href="../index.html#contact" class="btn btn-primary">Request Demo</a>
+      </div>
+      <button
+        class="nav-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <div class="nav-drawer" id="mobile-drawer" aria-hidden="true">
+      <ul role="list">
+        <li><a href="../index.html#products">Products</a></li>
+        <li><a href="../index.html#platform">Platform</a></li>
+        <li><a href="../index.html#industries">Industries</a></li>
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-drawer-ctas">
+        <a href="../index.html#contact" class="btn btn-outline">Client Portal</a>
+        <a href="../index.html#contact" class="btn btn-primary">Request Demo</a>
+      </div>
+    </div>
+
+    <main>
+
+      <!-- ─── POST HERO ─── -->
+      <section class="post-hero" aria-labelledby="post-heading">
+        <div class="post-hero-inner fade-up">
+
+          <!-- Back link -->
+          <a href="index.html" class="post-back" aria-label="Back to all articles">
+            <span class="arrow-left" aria-hidden="true">←</span> All Articles
+          </a>
+
+          <!-- Category + date meta row -->
+          <div class="post-meta">
+            <!-- ═══════════════════════════════════════════════════════════
+                 PLACEHOLDER: Replace "Category Name" with the article
+                 category (e.g. "Battery Technology", "BMS Engineering").
+                 Replace BLOG_DATE with the publication date
+                 (e.g. "July 15, 2025").
+                 ═══════════════════════════════════════════════════════════ -->
+            <span class="post-category">Category Name</span>
+            <span class="post-meta-sep" aria-hidden="true"></span>
+            <time class="post-date" datetime="YYYY-MM-DD">BLOG_DATE</time>
+          </div>
+
+          <!-- Article title -->
+          <!-- ═══════════════════════════════════════════════════════════════
+               PLACEHOLDER: Replace BLOG_TITLE with the full article headline.
+               Wrap key words in <em> to render them in blue (see blog.css).
+               ═══════════════════════════════════════════════════════════════ -->
+          <h1 id="post-heading">BLOG_TITLE</h1>
+
+        </div>
+      </section>
+
+      <!-- ─── HERO IMAGE ─── -->
+      <!-- ═══════════════════════════════════════════════════════════════════
+           PLACEHOLDER: Replace HERO_IMAGE with the URL or relative path of
+           the article's cover image (recommended: 1600 × 700 px, ≤ 200 KB).
+           Update the alt text to describe the image for screen readers.
+           ═══════════════════════════════════════════════════════════════════ -->
+      <div class="post-hero-img-wrap fade-up" role="img" aria-label="Article cover image">
+        <img
+          src="HERO_IMAGE"
+          alt="Descriptive alt text for the hero image"
+          loading="eager"
+          width="1600"
+          height="700"
+        />
+      </div>
+
+      <!-- ─── ARTICLE CONTENT ─── -->
+      <div class="post-body-wrap">
+        <article class="post-body fade-up" aria-label="Article body">
+
+          <!-- ═══════════════════════════════════════════════════════════════
+               PLACEHOLDER: Replace everything between these comments with
+               the article's HTML content. Use the semantic elements below
+               as a guide — delete any you don't need.
+
+               Supported elements (styled by blog-post.css):
+                 <h2>  — main section headings
+                 <h3>  — sub-section headings
+                 <p>   — body paragraphs
+                 <ul> / <ol> / <li>  — lists
+                 <blockquote>        — pull quotes
+                 <figure> + <img> + <figcaption>  — inline images
+                 <hr>  — section dividers
+                 <strong>  — bold emphasis
+                 <a>   — inline links
+                 <pre><code>  — code blocks
+                 <code>  — inline code
+               ═══════════════════════════════════════════════════════════════ -->
+
+          <p>ARTICLE_CONTENT — Replace this paragraph (and add more below) with the full article text.</p>
+
+          <h2>Section Heading</h2>
+
+          <p>Add body copy here. Each section should have at least one paragraph of supporting content.</p>
+
+          <h3>Sub-section Heading</h3>
+
+          <p>Continue the article. Remove any headings or blocks you do not need.</p>
+
+          <blockquote>
+            Use a blockquote for key pull quotes or important callouts.
+          </blockquote>
+
+          <ul>
+            <li>Bullet point one</li>
+            <li>Bullet point two</li>
+            <li>Bullet point three</li>
+          </ul>
+
+          <!-- ═══════════════════════════════════════════════════════════════
+               END ARTICLE_CONTENT
+               ═══════════════════════════════════════════════════════════════ -->
+
+          <!-- ─── Post footer: tags + CTA ─── -->
+          <div class="post-footer">
+            <div class="post-tags" aria-label="Article tags">
+              <!-- ═══════════════════════════════════════════════════════════
+                   PLACEHOLDER: Add or remove <a class="post-tag"> elements
+                   to match the article's topic tags. Link to filtered blog
+                   views when those pages exist.
+                   ═══════════════════════════════════════════════════════════ -->
+              <a href="index.html" class="post-tag">Tag One</a>
+              <a href="index.html" class="post-tag">Tag Two</a>
+              <a href="index.html" class="post-tag">Tag Three</a>
+            </div>
+            <a href="index.html" class="read-link" aria-label="Browse more articles">
+              More Articles <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+
+        </article>
+      </div>
+
+      <!-- ─── NEWSLETTER CTA ─── -->
+      <div class="newsletter-cta" role="region" aria-label="Newsletter sign-up">
+        <h2>Stay Ahead of the Curve</h2>
+        <p>
+          Receive our latest technical insights, product updates, and industry
+          research — delivered directly to your inbox.
+        </p>
+        <div class="newsletter-form">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="Enter your work email"
+            aria-label="Work email address"
+          />
+          <button class="btn btn-green">Subscribe</button>
+        </div>
+      </div>
+
+    </main>
+
+    <div class="green-line" aria-hidden="true"></div>
+
+    <!-- ─── FOOTER ─── -->
+    <footer role="contentinfo">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon" aria-hidden="true"></div>
+            Fuel Motion Inc.
+          </div>
+          <p>
+            Intelligent battery solutions for the enterprises that power
+            civilization. Engineered for precision, built for scale.
+          </p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Products</h5>
+            <ul>
+              <li><a href="#">12V Smart Battery</a></li>
+              <li><a href="#">EMS Systems</a></li>
+              <li><a href="#">BMaaS Cloud</a></li>
+              <li><a href="#">Custom OEM</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Partners</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Resources</h5>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Case Studies</a></li>
+              <li><a href="index.html">Blog</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Fuel Motion Inc. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- ─── JAVASCRIPT (identical to blog index) ─── -->
+    <script>
+      (function () {
+        "use strict";
+
+        /* Mobile nav drawer */
+        var toggle = document.querySelector(".nav-toggle");
+        var drawer = document.getElementById("mobile-drawer");
+        var drawerLinks = drawer.querySelectorAll("a");
+
+        function closeDrawer() {
+          toggle.classList.remove("open");
+          drawer.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+          drawer.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+        }
+
+        toggle.addEventListener("click", function () {
+          var isOpen = drawer.classList.toggle("open");
+          toggle.classList.toggle("open", isOpen);
+          toggle.setAttribute("aria-expanded", String(isOpen));
+          drawer.setAttribute("aria-hidden", String(!isOpen));
+          document.body.style.overflow = isOpen ? "hidden" : "";
+        });
+
+        drawerLinks.forEach(function (l) {
+          l.addEventListener("click", closeDrawer);
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && drawer.classList.contains("open")) {
+            closeDrawer();
+          }
+        });
+
+        /* Scroll-triggered fade-up animations */
+        var fadeObs = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) e.target.classList.add("visible");
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+        );
+        document.querySelectorAll(".fade-up").forEach(function (el) {
+          fadeObs.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>
