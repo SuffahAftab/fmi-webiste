@@ -51,15 +51,21 @@
       }
 
       /* ── Hero with background image ── */
-      .hero--about {
+      /*.hero--about {
         position: relative;
         /*background-image: url("assets/About us/top background.jpeg");*/
-        background-image: url("https://picsum.photos/1600/900");
+       /* background-image: url("https://picsum.photos/1600/900");
         background-size: cover;
         background-position: center 30%;
         min-height: 540px;
         background: red;
-      }
+      }*/
+
+      .hero--about {
+    position: relative;
+    min-height: 540px;
+    background: url("https://picsum.photos/1600/900") center center / cover no-repeat !important;
+}
       .hero--about::before {
         content: "";
         position: absolute;
